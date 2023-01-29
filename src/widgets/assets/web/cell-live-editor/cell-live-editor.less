@@ -1,0 +1,35 @@
+@sidebarSpace: 15px;
+
+.cell-live-editor-sidebar {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 1100;
+  width: 100%;
+  @media (min-width: 991px) {
+    max-width: 600px;
+    min-width: 300px;
+    box-shadow: -5px 0 5px 0 rgba(0, 0, 0, 0.1);
+  }
+  &.open {
+    display: block;
+  }
+  .cell-live-editor-sidebar-body {
+    overflow-y: scroll;
+    max-height: 100vh;
+    padding-bottom: 45px;
+  }
+  .cell-live-editor-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: @sidebarSpace;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+

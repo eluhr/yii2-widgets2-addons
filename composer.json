@@ -1,0 +1,21 @@
+{
+  "name": "eluhr/yii2-widgets2-addons",
+  "description": "Adds some helpful features to dmstr/yii2-widgets2-module",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Elias Luhr",
+      "email": "e.luhr@herzogkommunikation.de"
+    }
+  ],
+  "require": {
+      "yiisoft/yii2-twig": "^2.1.0",
+      "dmstr/yii2-widgets2-module": "^2.7.0-beta1",
+      "dmstr/yii2-json-editor": "^1.4.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "eluhr\\widgets\\addons\\": "src"
+    }
+  }
+}
