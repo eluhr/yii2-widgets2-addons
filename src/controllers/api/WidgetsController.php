@@ -28,7 +28,7 @@ class WidgetsController extends Controller
                 [
                     'allow' => true,
                     'matchCallback' => function () {
-                        return \Yii::$app->user->can();
+                        return Yii::$app->user->can($this->module->rbacEditRole);
                     },
                 ],
             ],
