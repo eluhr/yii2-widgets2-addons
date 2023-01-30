@@ -10,4 +10,14 @@ class Module extends \yii\base\Module
      * @var string
      */
     public $rbacEditRole = 'widgets-cell-edit';
+    
+    /**
+     * @inheritdoc 
+     */
+    public function init()
+    {
+        parent::init();
+
+        $this->setControllerPath('@vendor/eluhr/yii2-widgets2-addons/src/controllers');
+    }
 }
