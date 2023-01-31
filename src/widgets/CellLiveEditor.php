@@ -131,18 +131,27 @@ function createEditor(schemaJson, propertiesJson, templateId) {
     });
 }
 
-$(".hrzg-widget-widget").on("click", function() {
-    var that = $(this)
-    widgetDomainId = that.attr("id").replace("widget-", "");
-    replaceContainer = that.find(".hrzg-widget-content-frontend");
-     $.post({
-        url: '$widgetInfosUrl',
-        data: { domainId: widgetDomainId},
-        success: function(data) {
-            createEditor(data.schemaJson, data.propertiesJson, data.templateId)
-        }
+$('.hrzg-widget-widget-controls').each(function() {
+    var button = document.createElement('button')
+    button.innerHTML = '<i class="fa fa-pencil-square-o"></i>'
+    button.className = 'btn btn-primary'
+    $(this).prepend(button)
+
+    $(button).on('click', function(e) {
+        e.preventDefault()
+        var that = $(this)
+        var widgetContainer = that.closest('.hrzg-widget-widget')
+        widgetDomainId = widgetContainer.attr("id").replace("widget-", "");
+        replaceContainer = widgetContainer.find(".hrzg-widget-content-frontend");
+        $.post({
+            url: '$widgetInfosUrl',
+            data: { domainId: widgetDomainId},
+            success: function(data) {
+                createEditor(data.schemaJson, data.propertiesJson, data.templateId)
+            }
+        })
     })
-});
+})
 JS
             , View::POS_LOAD);
     }
